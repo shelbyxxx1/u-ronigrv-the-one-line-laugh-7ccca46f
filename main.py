@@ -11,6 +11,9 @@ from pathlib import Path
 
 LINE = "The only bill that gains weight when I ignore it is my gym."
 
+# The gate allows 1-200 characters; refuse loudly rather than submit junk.
+assert 1 <= len(LINE) <= 200, "line outside the 1-200 character gate"
+
 
 def main() -> None:
     out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
